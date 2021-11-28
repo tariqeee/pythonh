@@ -1,0 +1,61 @@
+print('\n-----------------')
+# Describe the difference between a chained conditional and a nested conditional.
+# Chained conditional
+# A chained conditional is when you use if/elif/else flow controls and they are all indented to the same depth. No nesting.
+# Nested conditional
+# A nested conditional is when you use if/elif/else flow controls and the conditionals vary in depth to create a more nuanced sequence of conditionals.
+# Nesting is the key differentiator between a Chained Conditional and a Nested Conditional.
+# Give your own example of each (Chained Conditional & Nested Conditional)
+
+# Chained Conditional
+def flow_if(mymone):
+ if mymone > 100:
+ 	print('I have no money !!')
+ elif mymone < 0:
+ 	print('Can you give me some money ?')
+ else:
+ 	print("I want to help to the poor people")
+flow_if(300)
+print('\n')
+
+
+# Nested Conditional
+def big_flow_if(income, overdue):
+ if overdue == True:
+ 	if income > 1000:
+ 		print('I am going to build a new home very soon!')
+ 	elif 1000 > income > 100:
+ 		print('I thinking my home would look nice')
+ 	else:
+ 		print("I'll give you some time, for develop my home")
+ else:
+ 	print("We are all friends, but don't ever be late")
+big_flow_if(1001, True)
+big_flow_if(101, True)
+big_flow_if(101, False)
+print('\n')
+
+# Give your own example of a nested conditional that can be modified to become a single conditional, and show the equivalent single conditional.
+
+def compare_words(person1, person2):
+	if len(person1) > 3:
+		if len(person2) > 3:
+			print(f"{person1} is equal in size to {person2}")
+		else:
+			print(f"{person1} isn't equal in size to {person2}")
+	else:
+		print('They are not the same size!')
+def compare_words2(person1, person2):
+	if len(person1) > 3 and len(person2) > 3:
+		print(f"{person1} is equal in size to {person2}")
+	else:
+		print(f"{person1} isn't equal in size to {person2}")
+compare_words('jibon', 'jibon')
+compare_words('jibon', 'Zakia')
+print('\n')
+compare_words2('jibon', 'jibon')
+compare_words2('jibon', 'Zakia')
+print('-----------------\n')
+# Describe a strategy for avoiding nested conditionals.
+# We are able to use operators (and, or, not) to give our conditional statements greater flexibily and this flexibility as you can see from above will sometimes allow for fewer nested conditionals.This is one accepted strategy.
+# Another strategy is using functional statements that layer in different functions
